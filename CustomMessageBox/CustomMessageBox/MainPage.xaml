@@ -6,11 +6,9 @@
              mc:Ignorable="d"
              x:Class="CustomMessageBox.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <Grid>
+        <Image Source="bg" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill"/>
+        <Button Text="Show Popup" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="200" Clicked="Button_Clicked"/>
+    </Grid>
 
 </ContentPage>

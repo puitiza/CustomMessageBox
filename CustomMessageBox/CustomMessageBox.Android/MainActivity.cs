@@ -19,6 +19,11 @@ namespace CustomMessageBox.Droid
 
             base.OnCreate(savedInstanceState);
 
+            //Esta linea es para la inicializacion de la libreria
+            Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
+
+
+
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());

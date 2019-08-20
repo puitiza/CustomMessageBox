@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rg:PopupPage
+             xmlns:rg="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CustomMessageBox.MessageBox">
+    <Grid HeightRequest="265" VerticalOptions="End">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Frame Grid.RowSpan="2" HeightRequest="225" VerticalOptions="End" CornerRadius="30" Padding="20,0" BackgroundColor="White">
+            <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <Image Source="archery.png" HorizontalOptions="Center" VerticalOptions="Start" Aspect="Fill" HeightRequest="60" WidthRequest="60" Margin="0,-40,0,0"/>
+                <StackLayout Orientation="Vertical" Spacing="10" VerticalOptions="Center" HorizontalOptions="Center">
+                    <Label Text="Congratulations!" FontSize="20" FontAttributes="Bold" TextColor="#E10555" HorizontalTextAlignment="Center"/>
+                    <Label TextColor="#363636" FontSize="15" Text="You have just been named the best archer in Kings Landing and the queen has requested that you join her in a bouquet"/>
+                </StackLayout>
+            </Grid>            
+        </Frame>
+        <Button Grid.Row="1" Text="CONTINUE" TextColor="White" HeightRequest="45" BackgroundColor="#E10555" Clicked="Button_Clicked"/>
+    </Grid>
+</rg:PopupPage>

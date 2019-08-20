@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rg.Plugins.Popup.Extensions;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -16,6 +17,13 @@ namespace CustomMessageBox
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            var pop = new MessageBox();
+            //Estoy seteando la animacion de la ventana emergente cunado le das clic
+            App.Current.MainPage.Navigation.PushPopupAsync(pop,true);
         }
     }
 }

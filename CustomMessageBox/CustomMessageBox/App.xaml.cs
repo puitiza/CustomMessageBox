@@ -9,8 +9,8 @@ namespace CustomMessageBox
         public App()
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
+            //Este NavigationPage, es para que pueda navegar entre paginas
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
