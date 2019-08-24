@@ -8,7 +8,11 @@
 
     <Grid>
         <Image Source="bg" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill"/>
-        <Button Text="Show Popup" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="200" Clicked="Button_Clicked"/>
+        <!--<Button Text="Show Popup" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="200" Clicked="Button_Clicked"/>-->
+        <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
+            <Button Text="Show Popup" HorizontalOptions="Center" WidthRequest="200" Clicked="Button_Clicked"/>
+            <Label x:Name="ResultTxt" FontSize="18" TextColor="White" HorizontalOptions="Center"/>
+        </StackLayout>
     </Grid>
 
 </ContentPage>

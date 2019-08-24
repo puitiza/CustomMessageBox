@@ -13,13 +13,18 @@
         </Grid.RowDefinitions>
         <Frame Grid.RowSpan="2" HeightRequest="225" VerticalOptions="End" CornerRadius="30" Padding="20,0" BackgroundColor="White">
             <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                <Image Source="archery.png" HorizontalOptions="Center" VerticalOptions="Start" Aspect="Fill" HeightRequest="60" WidthRequest="60" Margin="0,-40,0,0"/>
+                <Image Source="archery.png" HorizontalOptions="Center" VerticalOptions="Start" Aspect="Fill" HeightRequest="60" WidthRequest="60" />
                 <StackLayout Orientation="Vertical" Spacing="10" VerticalOptions="Center" HorizontalOptions="Center">
-                    <Label Text="Congratulations!" FontSize="20" FontAttributes="Bold" TextColor="#E10555" HorizontalTextAlignment="Center"/>
-                    <Label TextColor="#363636" FontSize="15" Text="You have just been named the best archer in Kings Landing and the queen has requested that you join her in a bouquet"/>
+                    <Label x:Name="TitleTxt" Text="Congratulations!" FontSize="20" FontAttributes="Bold" TextColor="#E10555" HorizontalTextAlignment="Center"/>
+                    <Label x:Name="MsgTxt" TextColor="#363636" FontSize="15" Text="You have just been named the best archer in Kings Landing and the queen has requested that you join her in a bouquet"/>
                 </StackLayout>
             </Grid>            
         </Frame>
-        <Button Grid.Row="1" Text="CONTINUE" TextColor="White" HeightRequest="45" BackgroundColor="#E10555" Clicked="Button_Clicked"/>
+        <!--<Button Grid.Row="1" Text="CONTINUE" TextColor="White" HeightRequest="45" BackgroundColor="#E10555" Clicked="Button_Clicked"/>-->
+
+        <StackLayout Grid.Row="1" Margin="10,10,10,10" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+            <Button x:Name="okBtn" Text="OK" TextColor="White" HeightRequest="45" BackgroundColor="#E10555" HorizontalOptions="FillAndExpand" Clicked="okBtn_Clicked"/>
+            <Button x:Name="CancelBtn" Text="Cancel" TextColor="White" HeightRequest="45" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand" Clicked="CancelBtn_Clicked"/>
+        </StackLayout>
     </Grid>
 </rg:PopupPage>

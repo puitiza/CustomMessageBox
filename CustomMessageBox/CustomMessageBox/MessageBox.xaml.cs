@@ -14,14 +14,42 @@ namespace CustomMessageBox
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MessageBox : PopupPage
     {
-        public MessageBox()
+        public MessageBox(String title, String message)
         {
             InitializeComponent();
+            TitleTxt.Text = title;
+            MsgTxt.Text = message;
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        //Esta es la clase de event que puede ser llamado desde otra parte del codigo
+        public EventHandler<DialogResult> onDialogClosed;
+
+        //private void Button_Clicked(object sender, EventArgs e)
+        //{
+        //    App.Current.MainPage.Navigation.PopPopupAsync(true);
+        //}
+
+        private void CancelBtn_Clicked(object sender, EventArgs e)
         {
+            //Al darle ok invoca al metodo dandole el mensaje.
+            onDialogClosed?.Invoke(this, new DialogResult { Success = true, Message = "User clicks CANCEL" });
+            //popup se cierra
             App.Current.MainPage.Navigation.PopPopupAsync(true);
         }
+
+        private void okBtn_Clicked(object sender, EventArgs e)
+        {
+            //Al darle ok invoca al metodo dandole el mensaje.
+            onDialogClosed?.Invoke(this, new DialogResult { Success = true, Message = "User clicks OK" });
+            //popup se cierra
+            App.Current.MainPage.Navigation.PopPopupAsync(true);
+        }
+    }
+
+    public class DialogResult
+    {
+        public bool Success { get; set; }
+
+        public string Message { get; set; }
     }
 }

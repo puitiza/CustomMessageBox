@@ -21,7 +21,12 @@ namespace CustomMessageBox
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            var pop = new MessageBox();
+            var pop = new MessageBox("Congrants","you can now move the next challenge");
+
+            pop.onDialogClosed += (s, arg) => {
+                ResultTxt.Text = arg.Message;
+            };
+
             //Estoy seteando la animacion de la ventana emergente cunado le das clic
             App.Current.MainPage.Navigation.PushPopupAsync(pop,true);
         }
